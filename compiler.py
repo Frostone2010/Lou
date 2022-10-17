@@ -1,8 +1,7 @@
 #This File is used to run the code if deleted, code can not be executed.
 
-from sys import *
-
 def open_file(filename):
+    filename = 'main.lou'
     data = open(filename, 'r').read()
     return data
     
@@ -13,7 +12,7 @@ def parse(filecontents):
         fl = fl.replace("\n", "")
         fl = fl.replace("\"", "")
         if ";" in fl:
-            fl - fl[:-1]
+            fl = fl[:-1]
             if "; " in fl:
                 fl = fl.replace("; ", "\n")
             else:
@@ -25,7 +24,7 @@ def parse(filecontents):
         return ""
         
 def run():
-    data = open_file(argv[1])
+    data = open_file('main.lou')
     print(parse(data))
 
 run()
